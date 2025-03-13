@@ -126,6 +126,7 @@
         font-size: 50px;
         font-style: italic;
         color: white ;
+        left: 10px;
 
     }
     
@@ -168,52 +169,60 @@
 
     }
     
-    h1 {
-        font-size: 30px;
-        margin-top: 20px;
-    }
-      /* Conteneur du Cover Flow */
-    
-    .coverflow-container {
-        position: relative;
-        width: 100%;
-        max-width: 800px;
-        height: 300px;
-        margin: 50px auto;
-        perspective: 1200px;
-        /* Effet 3D */
-        overflow: hidden;
-    }
-    /* Wrapper pour aligner les images */
-    
-    .coverflow-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        transition: transform 0.5s ease-in-out;
-    }
-    /* Style des images */
-    
-    .coverflow-slide {
-        position: absolute;
-        width: 250px;
-        height: 300px;
-        border-radius: 10px;
-        transition: transform 0.5s ease, opacity 0.5s ease;
-        object-fit: cover;
-        box-shadow: 0 5px 15px #F4B69B;
-        cursor: pointer;
-    }
+/* our portfolio */
+.coverflow-container h1 {
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+}
+
+
+.coverflow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 490px;
+    margin: -100px auto;
+    overflow: hidden;
+}
+
+/* Wrapper */
+.coverflow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* pics*/
+.coverflow-slide {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    object-fit: cover;
+    box-shadow: 0 5px 15px #F4B69B;
+    cursor: pointer;
+    z-index: 5;
+    will-change: transform;
+}
     /* Boutons de navigation */
     
     .prev,
     .next {
         position: absolute;
-        top: 450px;
+        top: 1440px;
         transform: translateY(-50%);
         background-color: #efb980;
         border: none;
@@ -244,7 +253,7 @@
         position: relative;
         width: 110%;
         height: 430px;
-        top: -10px;
+        top: 20px;
         margin: 50px;
         right: 180px;
         background: #9AC5F4;
@@ -373,6 +382,143 @@
     color: #d5832b;
 }
 
+ .about-us {
+    position: relative;
+            background-color:rgb(255, 242, 215);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            top: -100px;
+        }
+        
+        .container {          
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .text-section {
+            width: 50%;
+            text-align: left;
+            
+        }
+
+        h1 {
+    position: relative;
+    font-family: italic ;
+    font-size: 36px;
+    color: rgb(10, 10, 114);
+    text-align: center; /* Centre le texte */
+    top: -130px;
+    left: -270px;
+}
+
+.block {
+    display: block; /* Force chaque phrase sur une ligne */
+}
+
+@font-face {
+    font-family: 'Brittany Signature';
+    src: url('../fonts/BrittanySignature-MaZx.ttf') format('truetype'),
+         url('../fonts/BrittanySignature-LjyZ.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.signature {
+    font-family: 'Brittany Signature', cursive !important;
+            position: relative;
+            top: -130px;
+                font-size: 30px;
+            
+        }
+
+        p {
+            position: relative;
+            top: -130px;
+            color: #555;
+            line-height: 1.6;
+            font-size: 20px;
+        }
+
+        .button {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            transition: all 0.3s;
+                top: -100px;
+
+        }
+    
+
+        .button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .slash {
+    position: relative;
+    width: 2px; 
+    height: 50vh;
+    background-color: black; 
+    transform: skew(0deg);
+    left:-40px;
+    top: -35px;
+}
+
+  .image-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+
+        .main-img img {
+    position: relative;
+    width: 45vh;
+    height: 60vh;
+    top: 100px;
+    border-radius: 50%;
+    background-size: contain; /* Pour éviter que l'image dépasse */
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 10px solid rgba(255, 255, 255, 0.418);
+
+}
+
+.small-img img{
+    position: relative;
+  width: 25vh ;
+    height: 30vh; 
+    top:10px;
+    left: -130px;
+    border: 10px solid rgba(255, 255, 255, 0.418);
+    background-size: contain; /* Assure que l'image s'adapte */
+    background-repeat: no-repeat;
+}
+
+        .rotate-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 14px;
+            position: absolute;
+            left: -40px;
+            top: 30%;
+            color: #333;
+        }
+
 </style>
 
 <head>
@@ -410,14 +556,32 @@
     </div>
 </header>
 
-    <!-- Section d'Introduction -->
-    <section class="intro">
-        <h2>Rincon Lindo</h2>
-        <p>Welcome to Rincon Lindo – your destination for elegant event planning and curated décor. From weddings to intimate gatherings, we offer inspiration, mood boards, and handpicked decorations to make every occasion unforgettable. </p>
+ <div class="about-us">
+<div class="container">
+    <div class="image-section">
+        <div class="rotate-text">THE PERFECT PLACE TO BEGIN YOUR LOVE STORY</div>
+        <div class="main-img"> <img src="abt us.jpeg" alt=""></div>
+        <div class="small-img"> <img src="abt us small.jpeg" alt=""></div>
+    </div>
+    <div class="slash"></div>
+    <div class="text-section">
 
-        <h1>Our portfolio</h1>
+  <h1>  <span class="block">READY TO MAKE</span>
+    <span class="block">YOUR CELEBRATION</span></h1>       
+     <div class="signature">H. The Aurum</div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+            Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+        </p>
+        <a href="#" class="button">LEARN MORE</a>
+    </div>
+</div>
+</div>    
+   
+
 
         <div class="coverflow-container">
+        <h1>Our portfolio</h1>
             <div class="coverflow-wrapper">
                 <img class="coverflow-slide" src="pic7.jpg" alt="Image 7">
                 <img class="coverflow-slide" src="pic8.jpg" alt="Image 8">

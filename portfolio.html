@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Decoration Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e0d1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 350px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .dropdown-toggle {
+            width: 100%;
+            background: #fcd3ae;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            width: 100%;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 5px;
+            z-index: 1000;
+        }
+
+        .dropdown-menu button {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .dropdown-menu button:hover {
+            background: #e0a96d;
+        }
+
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff5e1;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        .reset-button, .shop-button {
+            background: #ff4d4d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: none;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+        }
+
+        .reset-button:hover {
+            background: #d43f3f;
+        }
+
+        .shop-button {
+            background: rgb(234, 159, 93);
+            color: white;
+        }
+
+        .shop-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-icon" onclick="toggleChat()">💬</div>
+
+    <div class="chat-container" id="chat-container">
+        <div class="chat-box">
+            <div class="chat-header">
+                <span>Smart Decoration Assistant</span>
+                <button class="close-btn" onclick="toggleChat()">✖</button>
+            </div>
+
+            <div class="chat-message bot">Hello! How can I assist you? Please make your selections below:</div>
+
+            <div class="dropdown" id="event-dropdown">
+                <button class="dropdown-toggle" onclick="toggleDropdown('event-dropdown')">🎉 Choose an Event</button>
+                <div class="dropdown-menu">
+                    <button onclick="selectOption('event', '🎂 Birthday')">🎂 Birthday</button>
+                    <button onclick="selectOption('event', '💍 Wedding')">💍 Wedding</button>
+                    <button onclick="selectOption('event', '🎓 Graduation')">🎓 Graduation</button>
+                    <button onclick="selectOption('event', '🎄 Holiday')">🎄 Holiday</button>
+                </div>
+            </div>
+
+            <div class="dropdown" id="type-dropdown">
+                <button class="dropdown-toggle" onclick="toggleDropdown('type-dropdown')">🛍️ Choose a Product Type</button>
+                <div class="dropdown-menu">
+                    <button onclick="selectOption('type', '🎈 Balloons')">🎈 Balloons</button>
+                    <button onclick="selectOption('type', '🕯️ Candles')">🕯️ Candles</button>
+                    <button onclick="selectOption('type', '🍽️ Tableware')">🍽️ Tableware</button>
+                    <button onclick="selectOption('type', '🎀 Decorations')">🎀 Decorations</button>
+                </div>
+            </div>
+
+            <div class="dropdown" id="theme-dropdown">
+                <button class="dropdown-toggle" onclick="toggleDropdown('theme-dropdown')">🎨 Choose a Theme</button>
+                <div class="dropdown-menu">
+                    <button onclick="selectOption('theme', '🌸 Floral')">🌸 Floral</button>
+                    <button onclick="selectOption('theme', '🖤 Classic')">🖤 Classic</button>
+                    <button onclick="selectOption('theme', '💎 Luxury')">💎 Luxury</button>
+                    <button onclick="selectOption('theme', '🌿 Natural')">🌿 Natural</button>
+                </div>
+            </div>
+
+            <div id="result" class="result-container">
+                <p id="result-text"></p>
+                <button id="shop-btn" class="shop-button" onclick="goToShop()">Go to Shop</button>
+                <button id="reset-btn" class="reset-button" onclick="resetSelection()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selections = { event: null, type: null, theme: null };
+
+        function toggleDropdown(id) {
+            document.getElementById(id).classList.toggle("active");
+        }
+
+        function selectOption(category, choice) {
+            selections[category] = choice;
+            document.querySelector(`#${category}-dropdown .dropdown-toggle`).textContent = choice;
+            document.getElementById(`${category}-dropdown`).classList.remove("active");
+            checkCompletion();
+        }
+
+        function checkCompletion() {
+            if (selections.event && selections.type && selections.theme) {
+                document.getElementById("result").style.display = "block";
+                document.getElementById("result-text").textContent = `You selected: ${selections.event} | ${selections.type} | ${selections.theme}`;
+                document.getElementById("reset-btn").style.display = "block";
+                document.getElementById("shop-btn").style.display = "block";
+            }
+        }
+
+        function resetSelection() {
+            selections = { event: null, type: null, theme: null };
+            document.getElementById("result").style.display = "none";
+            document.getElementById("reset-btn").style.display = "none";
+            document.getElementById("shop-btn").style.display = "none";
+        }
+
+        function toggleChat() {
+            let chat = document.getElementById("chat-container");
+            chat.style.display = (chat.style.display === "block") ? "none" : "block";
+        }
+        function goToShop() {
+    window.location.href = "shop.html"; // Remplace par ton lien
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="fixed-icon" onclick="toggleChat()">🎄</div>
+
+    <div class="chat-container" id="chat-container">
+        <div class="chat-box">
+            <div class="chat-header">
+                <span>Smart Decoration Assistant</span>
+                <button class="close-btn" onclick="toggleChat()">✖</button>
+            </div>
+
+            <div class="chat-message bot">Hello! How can I assist you? Please make your selections below:</div>
+
+            <div class="dropdown" id="event-dropdown">
+                <button class="dropdown-toggle" onclick="toggleDropdown('event-dropdown')">🎉 Choose an Event</button>
+                <div class="dropdown-menu">
+                    <button onclick="selectOption('event', '🎂 Birthday')">🎂 Birthday</button>
+                    <button onclick="selectOption('event', '💍 Wedding')">💍 Wedding</button>
+                    <button onclick="selectOption('event', '🎓 Graduation')">🎓 Graduation</button>
+                    <button onclick="selectOption('event', '🎄 Holiday')">🎄 Holiday</button>
+                </div>
+            </div>
+
+            <div class="dropdown" id="type-dropdown">
+                <button class="dropdown-toggle" onclick="toggleDropdown('type-dropdown')">🛍️ Choose a Product Type</button>
+                <div class="dropdown-menu">
+                    <button onclick="selectOption('type', '🎈 Balloons')">🎈 Balloons</button>
+                    <button onclick="selectOption('type', '🕯️ Candles')">🕯️ Candles</button>
+                    <button onclick="selectOption('type', '🍽️ Tableware')">🍽️ Tableware</button>
+                    <button onclick="selectOption('type', '🎀 Decorations')">🎀 Decorations</button>
+                </div>
+            </div>
+
+            <div class="dropdown" id="theme-dropdown">
+                <button class="dropdown-toggle" onclick="toggleDropdown('theme-dropdown')">🎨 Choose a Theme</button>
+                <div class="dropdown-menu">
+                    <button onclick="selectOption('theme', '🌸 Floral')">🌸 Floral</button>
+                    <button onclick="selectOption('theme', '🖤 Classic')">🖤 Classic</button>
+                    <button onclick="selectOption('theme', '💎 Luxury')">💎 Luxury</button>
+                    <button onclick="selectOption('theme', '🌿 Natural')">🌿 Natural</button>
+                </div>
+            </div>
+
+            <div id="result" class="result-container">
+                <p id="result-text"></p>
+                <button id="shop-btn" class="shop-button" onclick="goToShop()">Go to Shop</button>
+                <button id="reset-btn" class="reset-button" onclick="resetSelection()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+
+ </body>
+ </html>

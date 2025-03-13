@@ -1,0 +1,370 @@
+    /* Styles généraux */
+    
+   body {
+    font-family: 'Italic';
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+    /* Navigation */
+    
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1em;
+    }
+    
+    .nav-links a:hover {
+        text-decoration: none;
+    }
+    
+    .navbar {
+    position:absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.171);
+     display: flex;
+     align-items: center;
+    justify-content: space-between;
+    padding: 15px 90px;
+    height: 35px;
+    z-index: 1;
+    }
+   
+    .nav-links {
+     display: flex;
+        gap: 50px;
+    }
+    
+    .nav-links:first-child {
+     position: relative;
+        margin-left: -30px;
+    }
+    
+    .nav-links:last-child {
+      position: relative;
+        margin-right: 210px;
+    }
+    
+    .logo {
+        max-width: 200px;
+        height: auto;
+        position: relative;
+        left: 55%;
+        top: -1px;
+        transform: translateX(-50%);
+    }
+ .nav-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto; /* Permet d'aligner les icônes à droite */
+}
+
+.nav-icons img {
+    position: relative;
+    top: 21.5px;
+    width: 17px;  /* Ajuste la taille des icônes */
+    height: auto;
+    left: 1050px;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.nav-icons a:hover img {
+    opacity: 0.7;
+}
+
+
+    /* Bannière avec vidéo */
+    
+    .banner {
+        width: 100%;
+        top: 0;
+        height: 110vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Assure que l'overlay est au-dessus de la vidéo */
+}
+
+    .video-bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0; /* Assure que la vidéo commence tout en haut */
+}
+
+    .overlay {
+        top: -150px;
+        position: relative;
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+    }
+    
+    .overlay h1 {
+        position: relative;
+        top: 50px;
+        font-size: 50px;
+        font-style: italic;
+        color: white ;
+
+    }
+    
+    .overlay p {
+         position: relative;
+        top: 30px;
+        font-size: 27px;
+        font-style: italic;
+        color: white ;
+
+    }
+    
+    .intro {
+        position: relative;
+        background: #3674B5;
+        padding: 30px;
+        top: -98px;
+        height: 120px;
+        font-style: italic;
+        border-radius: 8px;
+        font-size: 40px;
+    }
+    
+    .intro h2 {
+        position: relative;
+        top: -40px;
+        font-size: 40px;
+        font-style: italic;
+        color: rgb(238, 228, 228) ;
+  font-family: "MonteCarlo", cursive;
+    }
+    
+    .intro p {
+        position: relative;
+        top: -50px;
+        font-size: 20px;
+        font-style: italic;
+        color:rgb(238, 228, 228) ;
+  font-family: "MonteCarlo", cursive;
+
+    }
+    
+    h1 {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+      /* Conteneur du Cover Flow */
+    
+    .coverflow-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        height: 300px;
+        margin: 50px auto;
+        perspective: 1200px;
+        /* Effet 3D */
+        overflow: hidden;
+    }
+    /* Wrapper pour aligner les images */
+    
+    .coverflow-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease-in-out;
+    }
+    /* Style des images */
+    
+    .coverflow-slide {
+        position: absolute;
+        width: 250px;
+        height: 300px;
+        border-radius: 10px;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        object-fit: cover;
+        box-shadow: 0 5px 15px #F4B69B;
+        cursor: pointer;
+    }
+    /* Boutons de navigation */
+    
+    .prev,
+    .next {
+        position: absolute;
+        top: 450px;
+        transform: translateY(-50%);
+        background-color: #efb980;
+        border: none;
+        padding: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+    
+    .prev:hover,
+    .next:hover {
+        background-color: #f1cec2;
+    }
+    
+    .prev {
+        left: 250px;
+    }
+    
+    .next {
+        right: 250px;
+    }
+    
+    /* Shop Section */
+    
+    .shop-container {
+        text-align: center;
+        position: relative;
+        width: 110%;
+        height: 430px;
+        top: -10px;
+        margin: 50px;
+        right: 180px;
+        background: #9AC5F4;
+        padding: 20px;
+    }
+    /* Titre de la section */
+    
+    .shop-title {
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    /* Flèches de navigation */
+    
+    .arrow {
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        background-color: #efb980;
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        border: none;
+        padding: 14px;
+        cursor: pointer;
+        border-radius: 30%;
+        transition: 0.3s;
+    }
+    
+    .arrow:hover {
+        background-color: #f1cec2;
+    }
+    
+    .left {
+        left: 190px;
+    }
+    
+    .right {
+        right: 180px;
+    }
+    /* Conteneur des images */
+    
+    .shop-gallery-wrapper {
+        overflow: hidden;
+        width: 100%;
+        max-width: 750px;
+        margin: auto;
+    }
+    /* Galerie avec flexbox */
+    
+    .shop-gallery {
+        display: flex;
+        gap: 15px;
+        transition: transform 0.5s ease-in-out;
+    }
+    /* Boîte de produit */
+    
+    .product-box {
+        position: relative;
+        width: 230px;
+        height: 250px;
+        flex: 0 0 auto;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .product-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+        border-radius: 20px;
+    }
+    
+    .product-box:hover img {
+        transform: scale(1);
+    }
+    /* Effet Image Overlay Fade */
+    
+    .product-box .overlay {
+        position: absolute;
+        width: 100%;
+        height: 400px;
+        background: #ffe5db49;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .product-box:hover .overlay {
+        opacity: 2;
+    }
+    
+    .product-box h1 {
+        font-size: 23px;
+        color: #f75701;
+        left: -20px;
+    }
+    
+    .product-box h2 {
+        color: black;
+        top: -90px;
+        left: -20px;
+        font-size: 23px;
+    }
+   .shop-button {  
+      display: block;  
+    position: absolute;
+    top: 410px;
+    right: 200px; 
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #efb980;
+    color: white;
+    border-radius: 25px;
+    border-color:  #efb980;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.shop-button:hover {
+    background-color: #f1cec2;
+    color: #d5832b;
+}

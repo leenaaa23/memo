@@ -212,7 +212,7 @@
     border-radius: 10px;
     transition: transform 0.5s ease, opacity 0.5s ease;
     object-fit: cover;
-    box-shadow: 0 5px 15px #F4B69B;
+    box-shadow: 0 5px 15px #9AC5F4;
     cursor: pointer;
     z-index: 5;
     will-change: transform;
@@ -222,20 +222,21 @@
     .prev,
     .next {
         position: absolute;
-        top: 1440px;
+        top: 1415px;
         transform: translateY(-50%);
-        background-color: #efb980;
+        background-color: #61a7f1;
         border: none;
         padding: 15px;
         font-size: 20px;
         cursor: pointer;
         border-radius: 50%;
         transition: 0.3s;
+        
     }
     
     .prev:hover,
     .next:hover {
-        background-color: #f1cec2;
+        background-color: #9AC5F4;
     }
     
     .prev {
@@ -256,7 +257,7 @@
         top: 20px;
         margin: 50px;
         right: 180px;
-        background: #9AC5F4;
+        background: #bdd4ff;
         padding: 20px;
     }
     /* Titre de la section */
@@ -269,31 +270,37 @@
     /* Flèches de navigation */
     
     .arrow {
-        position: absolute;
-        top: 60%;
-        transform: translateY(-50%);
-        background-color: #efb980;
-        width: 60px;
-        height: 60px;
-        font-size: 25px;
-        border: none;
-        padding: 14px;
-        cursor: pointer;
-        border-radius: 30%;
-        transition: 0.3s;
-    }
-    
-    .arrow:hover {
-        background-color: #f1cec2;
-    }
-    
-    .left {
-        left: 190px;
-    }
-    
-    .right {
-        right: 180px;
-    }
+    display: flex;
+    position: absolute;
+    top: 70%; /* Ajuste cette valeur si nécessaire */
+    transform: translateY(-50%);
+    background-color: #5e99d7;
+    width: 60px;
+    height: 30px; /* Garde une hauteur cohérente */
+    font-size: 25px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 16%;
+    transition: 0.3s;
+    align-items: center; 
+    justify-content: center; 
+        font-size: 25px; 
+}
+
+.arrow:hover {
+    background-color: #bad1eb;
+}
+
+.left {
+    left: 240px;
+}
+
+.right {
+    right: 245px;
+}
+
+
     /* Conteneur des images */
     
     .shop-gallery-wrapper {
@@ -326,7 +333,7 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.3s;
-        border-radius: 20px;
+        border-radius: 5px;
     }
     
     .product-box:hover img {
@@ -338,7 +345,7 @@
         position: absolute;
         width: 100%;
         height: 400px;
-        background: #ffe5db49;
+        background: #d6ccec49;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -352,7 +359,7 @@
     
     .product-box h1 {
         font-size: 23px;
-        color: #f75701;
+        color: #032c55;
         left: -20px;
     }
     
@@ -369,22 +376,22 @@
     right: 200px; 
     padding: 12px 25px;
     font-size: 18px;
-    background-color: #efb980;
+    background-color: #5e99d7;
     color: white;
     border-radius: 25px;
-    border-color:  #efb980;
+    border-color:  #5e99d7;
     cursor: pointer;
     transition: 0.1s;
 }
 
 .shop-button:hover {
-    background-color: #f1cec2;
-    color: #d5832b;
+    background-color: #bad1eb;
+    color: #5e99d7;
 }
 
  .about-us {
     position: relative;
-            background-color:rgb(255, 242, 215);
+            background-color:#f5e3d096;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -409,16 +416,13 @@
 
         h1 {
     position: relative;
-    font-family: italic ;
-    font-size: 36px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 28px;
     color: rgb(10, 10, 114);
     text-align: center; /* Centre le texte */
     top: -130px;
-    left: -270px;
-}
-
-.block {
-    display: block; /* Force chaque phrase sur une ligne */
+    left: -260px;
+    white-space: nowrap;
 }
 
 @font-face {
@@ -430,17 +434,17 @@
 }
 
 
-.signature {
-    font-family: 'Brittany Signature', cursive !important;
+.signature img {
             position: relative;
-            top: -130px;
-                font-size: 30px;
-            
+            width: 140px ;
+            height: auto;           
+             top:240px;
+             left: -220px; 
         }
 
         p {
             position: relative;
-            top: -130px;
+            top: -140px;
             color: #555;
             line-height: 1.6;
             font-size: 20px;
@@ -456,7 +460,7 @@
             color: #333;
             font-size: 14px;
             transition: all 0.3s;
-                top: -100px;
+            top: -130px;
 
         }
     
@@ -468,7 +472,7 @@
 
         .slash {
     position: relative;
-    width: 2px; 
+    width: 0.5px; 
     height: 50vh;
     background-color: black; 
     transform: skew(0deg);
@@ -492,10 +496,7 @@
     top: 100px;
     border-radius: 50%;
     background-size: contain; /* Pour éviter que l'image dépasse */
-    background-position: center;
-    background-repeat: no-repeat;
     border: 10px solid rgba(255, 255, 255, 0.418);
-
 }
 
 .small-img img{
@@ -504,18 +505,19 @@
     height: 30vh; 
     top:10px;
     left: -130px;
-    border: 10px solid rgba(255, 255, 255, 0.418);
+    border: 10px solid rgba(255, 255, 255, 0.087);
     background-size: contain; /* Assure que l'image s'adapte */
     background-repeat: no-repeat;
 }
 
         .rotate-text {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             writing-mode: vertical-rl;
             transform: rotate(180deg);
-            font-size: 14px;
+            font-size: 16px;
             position: absolute;
             left: -40px;
-            top: 30%;
+            top: 17%;
             color: #333;
         }
 
@@ -562,13 +564,14 @@
         <div class="rotate-text">THE PERFECT PLACE TO BEGIN YOUR LOVE STORY</div>
         <div class="main-img"> <img src="abt us.jpeg" alt=""></div>
         <div class="small-img"> <img src="abt us small.jpeg" alt=""></div>
+        
+
     </div>
     <div class="slash"></div>
     <div class="text-section">
 
-  <h1>  <span class="block">READY TO MAKE</span>
-    <span class="block">YOUR CELEBRATION</span></h1>       
-     <div class="signature">H. The Aurum</div>
+  <h1>READY TO MAKE YOUR <br> CELEBRATION UNFORGETTABLE?</h1>
+     <div class="signature"><img src="signature3.png" ></div>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
             Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
@@ -624,7 +627,7 @@
             <h2 class="shop-title">Our shop</h2>
 
             <!-- Flèche gauche -->
-            <button class="arrow left" onclick="scrollShop(-1)">🎀</button>
+            <button class="arrow left" onclick="scrollShop(-1)">&#8592</button>
 
             <div class="shop-gallery-wrapper">
                 <div class="shop-gallery">
@@ -650,9 +653,9 @@
                         <h1 class="overlay">Teddy Candle</h1>
                         <h2 class="overlay">$7</h2>
                     </div>
-                      <div class="product-box"><img src="pho9.jpg">
-                        <h1 class="overlay">Bat Decor </h1>
-                        <h2 class="overlay"> $6</h2>
+                      <div class="product-box"><img src="pho9.jpeg">
+                        <h1 class="overlay">Artificial Flower</h1>
+                        <h2 class="overlay"> $10</h2>
                     </div>
                    <div class="product-box"><img src="pho1.jpg">
                         <h1 class="overlay">Helium Balloons</h1>
@@ -662,7 +665,7 @@
                <a href="shop.html" target="_blank"> <button  class="shop-button">Shop Now</button></a>
 
             <!-- Flèche droite -->
-            <button class="arrow right" onclick="scrollShop(1)">🎀</button>
+            <button class="arrow right" onclick="scrollShop(1)">&#8594</button>
         </div>
         <script>
             const shopGallery = document.querySelector('.shop-gallery');
